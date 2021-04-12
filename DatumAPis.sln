@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatumAPis", "DatumAPis\DatumAPis.csproj", "{6C3AA11E-954F-4C71-A27A-57B782D21BB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatumApiTaxaJuros", "DatumApiTaxaJuros\DatumApiTaxaJuros.csproj", "{6662739F-7557-4F46-8E58-E6070B744E94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatumAPIs.test", "DatumAPIs.test\DatumAPIs.test.csproj", "{A68EF91E-3DA1-44EB-A1A4-F0245CB4FDB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C3AA11E-954F-4C71-A27A-57B782D21BB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C3AA11E-954F-4C71-A27A-57B782D21BB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C3AA11E-954F-4C71-A27A-57B782D21BB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C3AA11E-954F-4C71-A27A-57B782D21BB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6662739F-7557-4F46-8E58-E6070B744E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6662739F-7557-4F46-8E58-E6070B744E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6662739F-7557-4F46-8E58-E6070B744E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6662739F-7557-4F46-8E58-E6070B744E94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68EF91E-3DA1-44EB-A1A4-F0245CB4FDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68EF91E-3DA1-44EB-A1A4-F0245CB4FDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68EF91E-3DA1-44EB-A1A4-F0245CB4FDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68EF91E-3DA1-44EB-A1A4-F0245CB4FDB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
