@@ -12,13 +12,25 @@ namespace DatumApiTaxaJuros.Controllers
     [Route("[controller]")]
     public class TaxaJurosController : ControllerBase
     {
+        private readonly ILogger<TaxaJurosController> _logger;
+
+        public TaxaJurosController(ILogger<TaxaJurosController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpGet]
-        public decimal GetTaxa()
+        public ActionResult<TaxaJuros> GetTaxa()
         {
             TaxaJuros taxa = new TaxaJuros();
 
-            return taxa.ValorTaxaJuros;
+            return taxa;
+        }
 
+        [HttpGet("error")]
+        public IActionResult GetError()
+        {
+            return Problem("Erro no acesso ao Sistema. Favor entrar em contato com o Administrador.");
         }
     }
 }

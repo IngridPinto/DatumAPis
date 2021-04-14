@@ -16,6 +16,7 @@ namespace DatumAPIs.test
             CalculaJuros juros = new CalculaJuros();
             decimal valorDoJuros = juros.calcularValorJuros(valorInicial, tempo);
             decimal expected = Convert.ToDecimal(resultado, CultureInfo.InvariantCulture);
+
             Assert.Equal(expected, valorDoJuros);
 
         }
