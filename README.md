@@ -1,7 +1,5 @@
 # DatumAPis
 
-# DatumAPis
-
 Seleção de pessoa Desenvolvedora .Net
 Core
 
