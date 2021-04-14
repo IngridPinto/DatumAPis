@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DatumApiTaxaJuros.Model;
+using Microsoft.AspNetCore.Http;
 
 namespace DatumApiTaxaJuros.Controllers
 {
@@ -20,14 +21,16 @@ namespace DatumApiTaxaJuros.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public ActionResult<TaxaJuros> GetTaxa()
         {
             TaxaJuros taxa = new TaxaJuros();
 
-            return taxa;
+            return Ok(taxa);
         }
 
         [HttpGet("error")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetError()
         {
             return Problem("Erro no acesso ao Sistema. Favor entrar em contato com o Administrador.");

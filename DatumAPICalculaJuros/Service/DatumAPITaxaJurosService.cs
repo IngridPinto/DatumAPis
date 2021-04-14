@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DatumAPICalculaJuros.Interface;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,18 +9,18 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace DatumAPICalculaJuros.Model
+namespace DatumAPICalculaJuros.Service
 {
     /// <summary>
     /// Classe de acesso a API DatumAPITaxaJuros
     /// </summary>
-    public class DatumAPITaxaJuros
+    public class DatumAPITaxaJurosService : IDatumAPITaxaJurosService
     {
         /// <summary>
         /// Retorna a taxa a partir da consulta da API DatumAPITaxaJuros.
         /// </summary>
         /// <returns></returns>
-        public static decimal getTaxa()
+        public decimal GetTaxa()
         {
             using var client = new HttpClient();
             {

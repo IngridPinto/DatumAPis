@@ -2,14 +2,15 @@ using System;
 using Xunit;
 using DatumApiTaxaJuros.Model;
 
-namespace DatumAPIs.test
+namespace DatumAPIs.test.Testes
 {
     public class TaxaJurosTest
     {
+        private readonly TaxaJuros taxaJuros = new TaxaJuros();
+
         [Fact]
         public void ValorTaxaJuros()
-        {
-            TaxaJuros taxaJuros = new TaxaJuros();
+        {            
             Assert.Equal(0.01m, taxaJuros.ValorTaxaJuros);
         }
     }

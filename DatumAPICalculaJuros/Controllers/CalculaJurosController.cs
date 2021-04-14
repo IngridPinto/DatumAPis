@@ -5,10 +5,14 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using DatumAPICalculaJuros.Model;
+using DatumAPICalculaJuros.Interface;
+using DatumAPICalculaJuros.Service;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using DatumAPICalculaJuros.Controle;
 
 namespace DatumAPICalculaJuros.Controllers
 {
@@ -17,9 +21,15 @@ namespace DatumAPICalculaJuros.Controllers
     public class CalculaJurosController : ControllerBase
     {
         private readonly ILogger<CalculaJurosController> _logger;
-        public CalculaJurosController(ILogger<CalculaJurosController> logger)
+
+        private readonly IDatumAPITaxaJurosService _datumAPITaxaJurosService;
+
+        private readonly CalculaJurosControle _calculaJurosControle;
+
+        public CalculaJurosController(IDatumAPITaxaJurosService datumAPITaxaJurosService)
         {
-            _logger = logger;
+            _datumAPITaxaJurosService = datumAPITaxaJurosService;
+            _calculaJurosControle = new CalculaJurosControle();
         }
 
         /// <summary>
@@ -30,15 +40,17 @@ namespace DatumAPICalculaJuros.Controllers
         /// <param name="tempo"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<CalculaJuros> CalculaJuros(decimal valorInicial, int tempo)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public CalculaJurosModel CalculaJuros(decimal valorInicial, int tempo)
         {            
-            CalculaJuros calculaJuros = new CalculaJuros();
-            calculaJuros.ValorFinal = calculaJuros.calcularValorJuros(valorInicial, tempo);
+            decimal taxa = _datumAPITaxaJurosService.GetTaxa();
+            CalculaJurosModel calculaJuros = _calculaJurosControle.CalcularValorJuros(valorInicial, tempo, taxa);
 
             return calculaJuros;
         }
 
         [HttpGet("error")]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IActionResult GetError()
         {
             return Problem("Erro no acesso ao Sistema. Favor entrar em contato com o Administrador.");

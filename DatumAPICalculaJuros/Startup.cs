@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using DatumAPICalculaJuros.Interface;
+using DatumAPICalculaJuros.Service;
 
 namespace DatumAPICalculaJuros
 {
@@ -28,6 +30,8 @@ namespace DatumAPICalculaJuros
             services.AddControllers()
                 .AddJsonOptions(options =>
                 options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+            services.AddScoped<IDatumAPITaxaJurosService, DatumAPITaxaJurosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
