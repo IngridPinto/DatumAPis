@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using DatumAPICalculaJuros.Controle;
+using System.IO;
 
 namespace DatumAPICalculaJuros.Controllers
 {
@@ -20,8 +21,6 @@ namespace DatumAPICalculaJuros.Controllers
     [Route("[controller]")]
     public class CalculaJurosController : ControllerBase
     {
-        private readonly ILogger<CalculaJurosController> _logger;
-
         private readonly IDatumAPITaxaJurosService _datumAPITaxaJurosService;
 
         private readonly CalculaJurosControle _calculaJurosControle;
@@ -42,12 +41,12 @@ namespace DatumAPICalculaJuros.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public CalculaJurosModel CalculaJuros(decimal valorInicial, int tempo)
-        {            
+        {
             decimal taxa = _datumAPITaxaJurosService.GetTaxa();
             CalculaJurosModel calculaJuros = _calculaJurosControle.CalcularValorJuros(valorInicial, tempo, taxa);
 
             return calculaJuros;
-        }
+        }            
 
         [HttpGet("error")]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
