@@ -40,6 +40,5 @@ Exemplo: /calculajuros?valorinicial=100&meses=5 Resultado esperado: 105,10
 
 ### Extras
 1. Utilização de Docker
-2. Teste de integração da API em linguagem de sua preferência (Damos
-importância para pirâmide de testes)
+2. Teste de integração da API em linguagem de sua preferência (pirâmide de testes)
 3. Utilizar swagger
