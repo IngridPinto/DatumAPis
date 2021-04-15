@@ -38,7 +38,7 @@ namespace DatumAPICalculaJuros.Service
 
                     dynamic taxa = JsonConvert.DeserializeObject(conteudo);
 
-                    decimal resultado = Convert.ToDecimal(taxa.valorTaxaJuros, CultureInfo.InvariantCulture);
+                    decimal resultado = Convert.ToDecimal(taxa.ValorTaxaJuros, CultureInfo.InvariantCulture);
 
                     return resultado;
 

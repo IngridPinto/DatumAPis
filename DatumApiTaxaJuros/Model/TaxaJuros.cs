@@ -7,7 +7,7 @@ namespace DatumApiTaxaJuros.Model
 {
     public class TaxaJuros
     {
-        private readonly decimal taxaJuros = 0.01m;
+        private decimal taxaJuros = 0.01m;
 
         public decimal ValorTaxaJuros { get { return taxaJuros; } }
 

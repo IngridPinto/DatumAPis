@@ -19,7 +19,7 @@ namespace DatumAPIs.test.Testes
 
         CalculaJurosController calculaJurosController;
 
-        [Theory(DisplayName = "Calcula o valor final")]
+        [Theory(DisplayName = "CalculaJurosTest - Calcula o valor final a partir do controller")]
         [InlineData(100, 5, "105.10")]
         public void CalculaJurosTest(decimal valorInicial, int tempo, string resultado)
         {
