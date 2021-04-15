@@ -37,7 +37,7 @@ namespace DatumAPICalculaJuros
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "TodoAPI" , Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "DatumAPI Calcula Juros" , Version = "v1" });
             });
         }
 
@@ -66,7 +66,7 @@ namespace DatumAPICalculaJuros
             // Ativa o Swagger UI
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "TodoAPI V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "DatumAPI Calcula Juros V1");
                 c.RoutePrefix = string.Empty; //configura como pagina raiz
             });
 

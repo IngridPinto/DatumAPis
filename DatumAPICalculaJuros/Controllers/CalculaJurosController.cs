@@ -48,12 +48,14 @@ namespace DatumAPICalculaJuros.Controllers
             return calculaJuros;
         }            
 
-        [HttpGet("error")]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult GetError()
-        {
-            return Problem("Erro no acesso ao Sistema. Favor entrar em contato com o Administrador.");
-        }
+
+        //TODO: Tratamento de Erro
+        //[HttpGet("error")]
+        //[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //public IActionResult GetError()
+        //{
+        //    return Problem("Erro no acesso ao Sistema. Favor entrar em contato com o Administrador.");
+        //}
 
     }
 }
