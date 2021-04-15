@@ -19,13 +19,16 @@ namespace DatumAPIs.test.Testes
 
         CalculaJurosController calculaJurosController;
 
-        [Theory(DisplayName = "CalculaJurosTest - Calcula o valor final a partir do controller")]
-        [InlineData(100, 5, "105.10")]
-        public void CalculaJurosTest(decimal valorInicial, int tempo, string resultado)
+        [Theory(DisplayName = "Calcula o valor final a partir do controller")]
+        [InlineData("100", 5, "105.10")]
+        [InlineData("150", 8, "162.43")]
+        [InlineData("463.14", 8, "501.51")]
+        public void CalculaJurosTest(string valorInicial, int tempo, string resultado)
         {
+            decimal valorInicialDecimal = Convert.ToDecimal(valorInicial, CultureInfo.InvariantCulture);
             calculaJurosController = new CalculaJurosController(_datumApiTaxaJuros);
-            decimal expected = Convert.ToDecimal(resultado, CultureInfo.InvariantCulture);              
-            var result = calculaJurosController.CalculaJuros(valorInicial, tempo);
+            decimal expected = Convert.ToDecimal(resultado, CultureInfo.InvariantCulture);
+            var result = calculaJurosController.CalculaJuros(valorInicialDecimal, tempo);
 
             //Assert
             Assert.IsType<CalculaJurosModel>(result);

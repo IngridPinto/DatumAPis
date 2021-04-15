@@ -8,7 +8,7 @@ namespace DatumAPIs.test.Testes
     {
         private readonly TaxaJuros taxaJuros = new TaxaJuros();
 
-        [Fact (DisplayName = "ValorTaxaJuros - Retorna taxa a partir da classe TaxaJuros")]
+        [Fact (DisplayName = "Retorna o valor da taxa a partir da classe TaxaJuros")]
         public void ValorTaxaJuros()
         {            
             Assert.Equal(0.01m, taxaJuros.ValorTaxaJuros);

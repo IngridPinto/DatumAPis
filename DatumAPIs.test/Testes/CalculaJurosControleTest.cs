@@ -12,7 +12,7 @@ namespace DatumAPIs.test.Testes
     {
         private readonly CalculaJurosControle _calculaJurosControle = new CalculaJurosControle();
 
-        [Theory (DisplayName = "CalculaJurosControleValorTest - Calcula o valor final no controle")]
+        [Theory (DisplayName = "Calcula o valor final no controle")]
         [InlineData("100", 5, "0.01", "105.10")]
         [InlineData("150", 8, "0.01", "162.43")]
         [InlineData("463.14", 8, "0.01", "501.51")]
