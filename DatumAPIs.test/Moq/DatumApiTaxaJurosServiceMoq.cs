@@ -10,7 +10,7 @@ namespace DatumAPIs.test.Moq
 {
     public class DatumApiTaxaJurosServiceMoq : IDatumAPITaxaJurosService
     {
-        [Fact(DisplayName = "Mock getTaxa Moq")]
+        [Fact(DisplayName = "Mock GetTaxa")]
         public decimal GetTaxa()
         {
             //var datumApiTaxaJuros = new Mock<IDatumAPITaxaJurosService>();//cria objeto mock

@@ -11,7 +11,7 @@ namespace DatumAPIs.test.Testes
     {
         private ShowMeTheCodeController showMeTheCodeController = new ShowMeTheCodeController();
         
-        [Fact(DisplayName = "ShowMeTheCodeTest - retorna a url do github")]
+        [Fact(DisplayName = "Retorna a url do github")]
         public void ShowMeTheCodeTest()
         {
             var resultado = showMeTheCodeController.ShowMeTheCode();
