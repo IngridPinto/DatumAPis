@@ -16,7 +16,7 @@ Você deverá criar duas API's uma com dois endpoints e outra com um endpoint:
 
 ### API 2 - Calcula Juros
 
-1) Calcula Juros
+1. Calcula Juros
 Responde pelo path relativo "/calculajuros".
 
 * Ela faz um cálculo em memória, de juros compostos, conforme abaixo:
@@ -29,13 +29,14 @@ Valor Final = Valor Inicial * (1 + juros) ^ Tempo
 
 Exemplo: /calculajuros?valorinicial=100&meses=5 Resultado esperado: 105,10
 
-2) Show me the code
-Este responde pelo path relativo /showmethecode Deverá retornar a url de onde
-encontra-se o fonte no github
-Esperamos que a entrega tenha
-2. 1. Código fonte em asp.net core no github (Mostrar conhecimento básico
-de git)
-2. 2. Teste unitários (Mostrar conhecimento de testes unitários, se possível TDD)
+2. Show me the code
+
+* Este responde pelo path relativo "/showmethecode" deverá retornar a url de onde encontra-se o fonte no github.
+
+### Esperamos que a entrega tenha:
+
+1. Código fonte em asp.net core no github (Mostrar conhecimento básico de git)
+2. Teste unitários (Mostrar conhecimento de testes unitários, se possível TDD)
 
 ### Extras
 1. Utilização de Docker
