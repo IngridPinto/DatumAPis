@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DatumApiTaxaJuros.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace DatumApiTaxaJuros.Model
 {
-    public class TaxaJuros
+    public class TaxaJuros : ITaxaJuros
     {
         private decimal taxaJuros = 0.01m;
 

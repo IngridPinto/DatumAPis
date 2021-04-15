@@ -15,9 +15,9 @@ namespace DatumApiTaxaJuros.Controllers
     {
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public TaxaJuros GetTaxa()
+        public Model.TaxaJuros GetTaxa()
         {
-            TaxaJuros Taxa = new TaxaJuros();
+            Model.TaxaJuros Taxa = new Model.TaxaJuros();
 
             return Taxa;
         }
