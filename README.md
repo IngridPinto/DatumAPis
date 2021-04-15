@@ -1,13 +1,13 @@
-//# DatumAPis
 
 <h1 align="center">DatumAPis</h1>
 
-Seleção de pessoa Desenvolvedora .Net
-Core
+Seleção de pessoa Desenvolvedora .Net Core
 
 A demanda
 Você deverá criar duas API's uma com dois endpoints e outra com um endpoint:
-# API 1
+
+<h3>API 1 - TaxaJuros</h3>
+ 
 1) Retorna taxa de juros
 Responde pelo path relativo "/taxaJuros"
 Retorna o juros de 1% ou 0,01 (fixo no código)
