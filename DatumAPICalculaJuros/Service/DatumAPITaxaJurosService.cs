@@ -48,9 +48,9 @@ namespace DatumAPICalculaJuros.Service
             {
                 throw new Exception("DatumAPITaxaJuros recusou a conexão. Favor verificar com o Administrador. \n", ex);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }
