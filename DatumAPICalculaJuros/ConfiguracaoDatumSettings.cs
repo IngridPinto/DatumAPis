@@ -16,15 +16,5 @@ namespace DatumAPICalculaJuros
         /// </summary>
         public static string BaseURL { get; set; }
 
-        /// <summary>
-        /// Método que recupera a configuração da sessão DatumAPITaxaJurosSetting
-        /// </summary>
-        /// <param name="configuration"></param>
-        public static void RecuperaConfiguracao(IConfiguration configuration)
-        {
-            ConfiguracaoDatumSettings options = new ConfiguracaoDatumSettings();
-
-            configuration.GetSection("DatumAPITaxaJurosSettings").Bind(options);
-        }
     }
 }
