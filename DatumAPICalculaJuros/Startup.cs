@@ -38,7 +38,8 @@ namespace DatumAPICalculaJuros
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "DatumAPI Calcula Juros" , Version = "v1" });
-            });
+            });           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +50,7 @@ namespace DatumAPICalculaJuros
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -70,8 +71,15 @@ namespace DatumAPICalculaJuros
                 c.RoutePrefix = string.Empty; //configura como pagina raiz
             });
 
-            ConfiguracaoDatumSettings.RecuperaConfiguracao(this.Configuration);
 
-        }        
+            ConfiguracaoDatumSettings options = new();
+
+            //usar essa configuração
+            Configuration.GetSection("DatumAPITaxaJurosSettings").Bind(options);
+
+            //Para executar o teste de integração, adicionar a URL manual conforme abaixo:
+            ConfiguracaoDatumSettings.BaseURL = "http://localhost:57409";
+
+        }
     }
 }
