@@ -29,7 +29,9 @@ namespace DatumAPICalculaJuros.Service
 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.GetAsync(ConfiguracaoDatumSettings.BaseURL + "/taxajuros").Result;
+                client.BaseAddress = new Uri(ConfiguracaoDatumSettings.BaseURL);
+
+                HttpResponseMessage response = client.GetAsync("/taxajuros").Result;
 
                 response.EnsureSuccessStatusCode();
 
