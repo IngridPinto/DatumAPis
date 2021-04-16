@@ -16,41 +16,43 @@ namespace DatumAPICalculaJuros.Service
     /// </summary>
     public class DatumAPITaxaJurosService : IDatumAPITaxaJurosService
     {
-        private static HttpClient client = new();
         /// <summary>
         /// Retorna a taxa a partir da consulta da API DatumAPITaxaJuros.
         /// </summary>
         /// <returns></returns>
         public decimal GetTaxa()
         {
-            try
+            using (HttpClient client = new())
             {
-                client.DefaultRequestHeaders.Accept.Clear();
+                try
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
 
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                client.BaseAddress = new Uri(ConfiguracaoDatumSettings.BaseURL);
+                    client.BaseAddress = new Uri(ConfiguracaoDatumSettings.BaseURL);
 
-                HttpResponseMessage response = client.GetAsync("/taxajuros").Result;
+                    HttpResponseMessage response = client.GetAsync("/taxajuros").Result;
 
-                response.EnsureSuccessStatusCode();
+                    response.EnsureSuccessStatusCode();
 
-                string conteudo = response.Content.ReadAsStringAsync().Result;
+                    string conteudo = response.Content.ReadAsStringAsync().Result;
 
-                dynamic taxa = JsonConvert.DeserializeObject(conteudo);
+                    dynamic taxa = JsonConvert.DeserializeObject(conteudo);
 
-                decimal resultado = Convert.ToDecimal(taxa.ValorTaxaJuros, CultureInfo.InvariantCulture);
+                    decimal resultado = Convert.ToDecimal(taxa.ValorTaxaJuros, CultureInfo.InvariantCulture);
 
-                return resultado;
+                    return resultado;
 
-            }
-            catch (AggregateException ex)
-            {
-                throw new Exception("DatumAPITaxaJuros recusou a conexão. Favor verificar com o Administrador. \n", ex);
-            }
-            catch (Exception)
-            {
-                throw;
+                }
+                catch (AggregateException ex)
+                {
+                    throw new Exception("DatumAPITaxaJuros recusou a conexão. Favor verificar com o Administrador. \n", ex);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
         }
     }
